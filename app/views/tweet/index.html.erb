@@ -1,0 +1,12 @@
+<h1>This is a single tweet!</h1>
+
+<% @tweets.each do |tweet| %>
+
+  <p><%= tweet.description %></p>
+  <p>Favorited by <%= tweet.favorites.to_s %> people!</p>
+  <small><p><%= tweet.created_at %></p></small>
+  <hr />
+
+<% end %>
+
+
