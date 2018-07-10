@@ -1,0 +1,11 @@
+<h1>This is a list of projects!</h1>
+
+<% @projects.each do |project| %>
+
+  <p><%= project.name %></p>
+  <small><p><%= project.created_at %></p></small>
+  <hr />
+
+<% end %>
+
+
