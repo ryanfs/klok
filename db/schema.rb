@@ -10,14 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_20_192959) do
+ActiveRecord::Schema.define(version: 2018_07_10_195105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "tweets", force: :cascade do |t|
+  create_table "animals", force: :cascade do |t|
+    t.integer "legs"
+    t.string "name", limit: 255
+    t.string "image_url", limit: 255
+  end
+
+  create_table "projects", force: :cascade do |t|
     t.string "description"
-    t.integer "favorites", default: 0
+    t.string "name"
+    t.string "hex"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
