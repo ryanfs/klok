@@ -1,0 +1,11 @@
+<h1>Welcome!</h1>
+
+<% @timeblocks.each do |timeblock| %>
+
+  <p style="color: <%= timeblock.hex %>"><%= timeblock.name %></p>
+  <small><p><%= timeblock.created_at %></p></small>
+  <hr />
+
+<% end %>
+
+

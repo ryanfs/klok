@@ -2,7 +2,7 @@
 
 <% @projects.each do |project| %>
 
-  <p><%= project.name %></p>
+  <p style="color: <%= project.hex %>"><%= project.name %></p>
   <small><p><%= project.created_at %></p></small>
   <hr />
 
