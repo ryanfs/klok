@@ -16,8 +16,8 @@
 
 <% @timeblocks.each do |timeblock| %>
 
-  <p>Start: <%= timeblock.start %></p>
-  <p>Stop: <%= timeblock.end %></p>
+  <p>Start: <span class="timestring"><%= timeblock.start %></span></p>
+  <p>Stop: <span class="timestring"><%= timeblock.end %></span></p>
   <small><p><%= timeblock.created_at %></p></small>
   <hr />
 

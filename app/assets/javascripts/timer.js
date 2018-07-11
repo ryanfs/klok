@@ -2,6 +2,12 @@
 // https://codepen.io/_Billy_Brown/pen/dbJeh
 
 window.onload = function () {
+  // momentjs stuff
+  let timestrings = document.getElementsByClassName("timestring");
+  for (let element of timestrings) {
+      element.textContent = moment(element.textContent).format('lll');
+  }
+
 //via https://codepen.io/cathydutton/pen/GBcvo
 
   let seconds = 00;
