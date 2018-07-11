@@ -3,8 +3,14 @@
 <% @projects.each do |project| %>
 
   <p style="color: <%= project.hex %>"><%= project.name %></p>
-  <small><p><%= project.created_at %></p></small>
   <hr />
+
+  <% project.timeblocks.each do |timeblock| %>
+    <p>Start: <%= timeblock.start %></p>
+    <p>Stop: <%= timeblock.end %></p>
+    <p>Description: <%= timeblock.description %></p>
+    <hr />
+  <% end  %>
 
 <% end %>
 

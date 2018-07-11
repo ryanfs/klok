@@ -1,0 +1,10 @@
+<p style="color: <%= @project.hex %>"><%= @project.name %></p>
+
+<% @project.timeblocks.each do |timeblock| %>
+  <p>Start: <%= timeblock.start %></p>
+  <p>Stop: <%= timeblock.end %></p>
+  <p>Description: <%= timeblock.description %></p>
+  <hr />
+<% end  %>
+
+

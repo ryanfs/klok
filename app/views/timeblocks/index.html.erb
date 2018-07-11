@@ -1,8 +1,23 @@
-<h1>Welcome!</h1>
+<h1>Start the Klok!</h1>
+
+<h2><span id="minutes">00</span>:<span id="seconds">00</span>:<span id="tens">00</span></h2>
+
+<%= form_for @timeblock, url: {action: "create"}, html: {class: "form-group"} do |f| %>
+  <%= f.label :project_id, 'Which project are you working on right now?' %>
+  <br />
+  <%= f.collection_select :project_id, Project.order(:name),:id,:name, include_blank: false %>
+  <br />
+  <%= f.text_area :description, placeholder: 'Describe this task...' %>
+  <br />
+  <%= f.hidden_field :start, data: {startinput: :hidden}  %>
+  <%= f.submit "Start clock", data: {clock: :start} %>
+  <%= f.submit "Stop clock", class: 'hidden', data: {clock: :stop} %>
+<% end %>
 
 <% @timeblocks.each do |timeblock| %>
 
-  <p style="color: <%= timeblock.hex %>"><%= timeblock.name %></p>
+  <p>Start: <%= timeblock.start %></p>
+  <p>Stop: <%= timeblock.end %></p>
   <small><p><%= timeblock.created_at %></p></small>
   <hr />
 
