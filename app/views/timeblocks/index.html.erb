@@ -1,26 +1,50 @@
-<h1>Start the Klok!</h1>
+<%= form_for @timeblock, url: {action: "create"} do |f| %>
+<div class="posts-item">
+  <div class="posts-thumbnail v1">
+    Friends & Strangers
+  </div>
 
-<h2><span id="minutes">00</span>:<span id="seconds">00</span>:<span id="tens">00</span></h2>
+  <div class="posts-item-content">
+    <div class="posts-item-header">
+      <div class="posts-item-title-wrapper">
+        <h2><span id="minutes">00</span>:<span id="seconds">00</span>:<span id="tens">00</span></h2>
+      </div>
+    </div>
+  </div>
 
-<%= form_for @timeblock, url: {action: "create"}, html: {class: "form-group"} do |f| %>
-  <%= f.label :project_id, 'Which project are you working on right now?' %>
-  <br />
-  <%= f.collection_select :project_id, Project.order(:name),:id,:name, include_blank: false %>
-  <br />
-  <%= f.text_area :description, placeholder: 'Describe this task...' %>
-  <br />
-  <%= f.hidden_field :start, data: {startinput: :hidden}  %>
-  <%= f.submit "Start clock", data: {clock: :start} %>
-  <%= f.submit "Stop clock", class: 'hidden', data: {clock: :stop} %>
-<% end %>
+</div>
 
-<% @timeblocks.each do |timeblock| %>
 
-  <p>Start: <span class="timestring"><%= timeblock.start %></span></p>
-  <p>Stop: <span class="timestring"><%= timeblock.end %></span></p>
-  <small><p><%= timeblock.created_at %></p></small>
-  <hr />
+<div class="posts-item">
 
-<% end %>
+  <div class="posts-thumbnail v1">
+    <%= f.collection_select :project_id, Project.order(:name),:id,:name, include_blank: false %>
+  </div>
+
+  <div class="posts-item-content">
+
+    <div class="posts-item-header">
+      <div class="posts-item-title-wrapper">
+        <h3 class="posts-item-title">
+          What are you working on right now?
+        </h3>
+      </div>
+    </div>
+
+    <div class="posts-item-body">
+      <div class="posts-item-excerpt">
+        <%= f.text_area :description, placeholder: 'Describe what you\'re doing...', class: 'textarea is-primary is-medium' %>
+      </div>
+    </div>
+
+    <div class="posts-item-footer">
+      <%= f.hidden_field :start, data: {startinput: :disabled}  %>
+      <%= f.submit "Start clock", class: 'button is-primary', data: {clock: :start} %>
+      <%= f.submit "Stop and Submit", class: 'button is-warning', data: {clock: :stop} %>
+    </div>
+    <% end %>
+
+  </div>
+</div>
 
 

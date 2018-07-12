@@ -10,7 +10,21 @@
   </head>
 
   <body>
-    nav (that links to each project)
-    <%= yield %>
+    <div class="main">
+      <%= render 'nav/index', locals: { projects: @projects } %>
+      <div class="home-list">
+        <div class="home-list-main">
+          <div class="posts-daily">
+            <div class="posts-day">
+              <div class="posts-list">
+                <div class="posts-list-content">
+                  <%= yield %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

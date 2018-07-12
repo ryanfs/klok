@@ -1,4 +1,4 @@
-<p style="color: <%= @project.hex %>"><%= @project.name %></p>
+<p class="color<%= @project.hex %>"><%= @project.name %></p>
 
 <% @project.timeblocks.each do |timeblock| %>
   <p>Start: <span class="timestring"><%= timeblock.start %></span></p>

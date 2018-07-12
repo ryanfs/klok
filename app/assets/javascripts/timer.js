@@ -1,7 +1,7 @@
 // this one is a little buggy but implements the minutes
 // https://codepen.io/_Billy_Brown/pen/dbJeh
 
-window.onload = function () {
+document.addEventListener("turbolinks:load", function() {
   // momentjs stuff
   let timestrings = document.getElementsByClassName("timestring");
   for (let element of timestrings) {
@@ -21,20 +21,24 @@ window.onload = function () {
   // let buttonReset = document.getElementById('button-reset');
   let Interval ;
 
-  buttonStart.onclick = function(event) {
-    event.preventDefault();
-    clearInterval(Interval);
-    Interval = setInterval(startTimer, 10);
-    let hiddenStartTimeInput = document.querySelector('[data-startinput="hidden"]');
-    let stopClockButton = document.querySelector('[data-clock="stop"]')
-    let startClockButton = document.querySelector('[data-clock="start"]')
-    hiddenStartTimeInput.value = new Date;
-    stopClockButton.classList.remove("hidden");
-    startClockButton.classList.add("hidden");
+  if (buttonStop) {
+    buttonStop.setAttribute("disabled", "disabled");
   }
 
-  buttonStop.onclick = function() {
-    clearInterval(Interval);
+  if (buttonStart) {
+    buttonStart.onclick = function(event) {
+      event.preventDefault();
+      clearInterval(Interval);
+      Interval = setInterval(startTimer, 10);
+      let disabledStartTimeInput = document.querySelector('[data-startinput="disabled"]');
+      disabledStartTimeInput.value = new Date;
+      buttonStart.setAttribute("disabled", "disabled");
+      buttonStop.removeAttribute("disabled");
+    }
+
+    buttonStop.onclick = function() {
+      clearInterval(Interval);
+    }
   }
 
   // buttonReset.onclick = function() {
@@ -80,4 +84,4 @@ window.onload = function () {
     }
   }
 
-}
+});

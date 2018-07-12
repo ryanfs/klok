@@ -1,7 +1,34 @@
 $grey:#f3f3f3;
 
+html {
+  background: #E2F5FE!important;
+}
+
 body {
-background:$grey;
-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-height:100%;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  height:100%;
+}
+
+.colorFFC200 {
+  color: #FFC200
+}
+
+.color00FFFF {
+  color: #00FFFF;
+}
+
+.textarea {
+  width: 100%;
+}
+
+select {
+  width: 100%;
+}
+
+.posts-item-body {
+  margin: 20px 0!important;
+}
+
+.posts-item-footer {
+  justify-content: space-between;
 }

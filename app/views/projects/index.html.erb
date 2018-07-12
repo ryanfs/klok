@@ -2,7 +2,7 @@
 
 <% @projects.each do |project| %>
 
-  <p style="color: <%= project.hex %>"><%= project.name %></p>
+  <p class="color<%= project.hex %>"><%= project.name %></p>
   <hr />
 
   <% project.timeblocks.each do |timeblock| %>
