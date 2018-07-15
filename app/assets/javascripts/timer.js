@@ -8,6 +8,11 @@ document.addEventListener("turbolinks:load", function() {
       element.textContent = moment(element.textContent).format('lll');
   }
 
+  let timeonlystrings = document.getElementsByClassName("timeonlystring");
+  for (let element of timeonlystrings) {
+      element.textContent = moment(element.textContent).format('LT');
+  }
+
 //via https://codepen.io/cathydutton/pen/GBcvo
 
   let seconds = 00;

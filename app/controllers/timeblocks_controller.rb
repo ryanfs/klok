@@ -12,8 +12,8 @@ end
 
  def create
    @timeblock = Timeblock.new(timeblock_params)
-   @timeblock.end = Time.now
-   @timeblock.start = @timeblock['start'].to_time
+   @timeblock.end = Time.now.utc
+   @timeblock.start = @timeblock['start'].to_time.utc
    if @timeblock.save
      redirect_to project_path(@timeblock.project)
    else

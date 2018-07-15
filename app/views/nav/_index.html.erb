@@ -3,6 +3,9 @@
     <a class="navbar-item" href="/">
       [logo]
     </a>
+    <a class="navbar-item" href="/projects?date=<%= Date.today.strftime("%F") %>">
+      Today
+    </a>
     <% projects.each do |project| %>
     <a href="/projects/<%= project.id %>" class="navbar-item">
       <span class="color<%= project.hex %>"><%= project.name %></span>
