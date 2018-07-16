@@ -4,6 +4,7 @@ class TimeblocksController < ApplicationController
   @timeblock = Timeblock.new
   @projects = Project.all
   @timeblocks = Timeblock.all
+  @date = Date.today.strftime("%F")
 end
 
  def show
@@ -15,7 +16,7 @@ end
    @timeblock.end = Time.now.utc
    @timeblock.start = @timeblock['start'].to_time.utc
    if @timeblock.save
-     redirect_to project_path(@timeblock.project)
+     redirect_to projects_path(date: Date.today.strftime("%F"))
    else
      render :new
    end
