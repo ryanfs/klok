@@ -14,16 +14,16 @@
   <div class="navbar-menu">
     <div class="navbar-end">
       <div class="navbar-item">
+        <a href="/projects?date=<%= Date.today.strftime("%F") %>">
+          Today
+        </a>
+      </div>
+
+      <div class="navbar-item">
           <input id="bulmaDatepicker" class="input" type="date" value="<%= @date %>">
           <span class="icon">
             <i class="fas fa-calendar"></i>
           </span>
-      </div>
-
-      <div class="navbar-item">
-        <a href="/projects?date=<%= Date.today.strftime("%F") %>">
-          Today
-        </a>
       </div>
     </div>
   </div>
