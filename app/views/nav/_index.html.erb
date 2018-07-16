@@ -1,17 +1,8 @@
 <nav class="navbar is-light" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="/">
+    <a href="/">
       [logo]
     </a>
-    <a class="navbar-item" href="/projects?date=<%= Date.today.strftime("%F") %>">
-      Today
-    </a>
-    <% projects.each do |project| %>
-    <a href="/projects/<%= project.id %>" class="navbar-item">
-      <span class="color<%= project.hex %>"><%= project.name %></span>
-    </a>
-    <% end  %>
-
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -21,9 +12,16 @@
 
   <div class="navbar-menu">
     <div class="navbar-end">
-      <div class="navbar-item has-dropdown">
-        <a class="navbar-link">
-          @ryan
+      <div class="navbar-item">
+          <input id="bulmaDatepicker" class="input" type="date" value="<%= @date %>">
+          <span class="icon">
+            <i class="fas fa-calendar"></i>
+          </span>
+      </div>
+
+      <div class="navbar-item">
+        <a href="/projects?date=<%= Date.today.strftime("%F") %>">
+          Today
         </a>
       </div>
     </div>

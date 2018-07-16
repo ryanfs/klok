@@ -15,9 +15,9 @@ document.addEventListener("turbolinks:load", function() {
 
 //via https://codepen.io/cathydutton/pen/GBcvo
 
-  let seconds = 00;
-  let tens = 00;
-  let minutes = 00;
+  let seconds = 0;
+  let tens = 0;
+  let minutes = 0;
   let appendTens = document.getElementById("tens")
   let appendSeconds = document.getElementById("seconds")
   let appendMinutes = document.getElementById("minutes")

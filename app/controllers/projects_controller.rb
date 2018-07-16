@@ -1,8 +1,8 @@
 class ProjectsController < ApplicationController
 
   def index
-    day = Date.parse(params['date'])
-    @projects = Project.includes(:timeblocks).where(timeblocks: {end: day.beginning_of_day .. day.end_of_day})
+    @date = Date.parse(params['date'])
+    @projects = Project.includes(:timeblocks).where(timeblocks: {end: @date.beginning_of_day .. @date.end_of_day})
   end
 
   def show
