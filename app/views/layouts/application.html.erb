@@ -16,6 +16,17 @@
         <div class="home-list-main">
           <div class="posts-daily">
             <div class="posts-day">
+              <div class="posts-day-heading-wrapper">
+                <h4 class="post-day-heading">
+                  <span class="posts-day-heading-date text-right">
+                    <%= @date.strftime("%m/%d") %>
+                  </span>
+                  <span class="posts-day-heading-day">
+                    <%= @date.strftime("%A") %>
+                  </span>
+                </h4>
+              </div>
+
               <div class="posts-list">
                 <div class="posts-list-content">
                   <%= yield %>

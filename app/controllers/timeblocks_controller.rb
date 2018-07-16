@@ -4,7 +4,7 @@ class TimeblocksController < ApplicationController
   @timeblock = Timeblock.new
   @projects = Project.all
   @timeblocks = Timeblock.all
-  @date = Date.today.strftime("%F")
+  @date = Date.parse(Date.today.strftime("%F"))
 end
 
  def show
