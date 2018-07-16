@@ -1,4 +1,11 @@
 $grey:#f3f3f3;
+$purple: #8A4D76;
+$gold: #FFDD57;
+$cyan: #00FFFF;
+$pink: #FA7C91;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
 
 html {
   background: #E2F5FE!important;
@@ -23,12 +30,16 @@ body {
     color: #363636;
 }
 
-.colorFFC200 {
-  color: #FFC200
+.colorFFDD57 {
+  color: $gold;
 }
 
 .color00FFFF {
-  color: #00FFFF;
+  color: $cyan;
+}
+
+.color8A4D76 {
+  color: $purple
 }
 
 .textarea {
