@@ -6,4 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-  projects = Project.create([{ name: "Friends & Strangers", hex: "#8A4D76" }, { name: "3 on 3", hex: "00FFFF" }, { name: "Gold Label", hex: "FFDD57" }])
+  # projects = Project.create([{ name: "Friends & Strangers", hex: "8A4D76" }, { name: "3 on 3", hex: "00FFFF" }, { name: "Gold Label", hex: "FFDD57" }])
