@@ -24,7 +24,6 @@
         <div class="posts-item-footer">
           <div>
             <span class="tag is-primary"><%= (( timeblock.end - timeblock.start) / 60).round %> minutes</span>
-            <!-- <span class="tag is-light">$100</span> -->
           </div>
         </div>
 
@@ -32,3 +31,11 @@
   </div>
 <% end %>
 <% end %>
+
+<% total=0 %>
+<% for timeblock in project.timeblocks %>
+  <% total += (( timeblock.end - timeblock.start) / 60).round %>
+<% end %>
+
+<span class="tag is-light">Minutes: <%= total %></span>
+<span class="tag is-light">Hours: <%= (total / 60 ).round(2) %>
